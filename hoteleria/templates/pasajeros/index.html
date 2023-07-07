@@ -1,0 +1,55 @@
+{% extends "paginas/base.html" %}
+
+<!DOCTYPE html>
+
+
+{% block titulo %} Pasajero {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+  <div class="card-header">
+    <a name="" id="" class="btn btn-primary" href="{% url 'crearpas' %}" role="button">Registrar Pasajeros</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Pasajeros</h4>
+
+
+  <table class="table">
+    <thead>
+
+    <tr>
+        <th>Id</th>
+        <th>Rut pasajero</th>
+        <th>Nombre completo pasajero</th>
+        <th>Pasajero Responsable</th>
+        <th>Número de habitación pasajero</th>
+        <th>Cargo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for pasajerot in pasajerot  %}
+      <tr>
+        <td> {{ pasajerot.id }} </td>
+        <td> {{ pasajerot.rpasajero }} </td>
+        <td> {{ pasajerot.nombrepasajero }} </td>
+        <td> {{ pasajerot.pasajeroresponsable  }} </td>
+        <td> {{ pasajerot.nhabitacionpas }} </td>
+        <td> {{ pasajerot.cargo }} </td>
+        <td>
+          <a name="" id="" class="btn btn-info" href="{% url 'editarpas' pasajerot.id %}" role="button">Editar</a>
+          <a name="" id="" class="btn btn-danger" href="{% url 'eliminarpas' pasajerot.id %}" role="button">Borrar</a>
+        </td>
+      </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+
+
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+{% endblock %}

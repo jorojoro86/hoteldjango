@@ -1,0 +1,53 @@
+{% extends "paginas/base.html" %}
+
+<!DOCTYPE html>
+
+
+{% block titulo %} Habitacion {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+  <div class="card-header">
+    <a name="" id="" class="btn btn-primary" href="{% url 'crearhab'  %}" role="button">Agregar nueva habitación</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Habitación</h4>
+
+
+  <table class="table">
+    <thead>
+
+    <tr>
+        <th>Id</th>
+        <th>Numero de habitación</th>
+        <th>Cantidad de pasajeros admitidos</th>
+        <th>Orientacion habitación</th>
+        <th>Estado habitación</th>
+        </tr>
+    </thead>
+    <tbody>
+      {%  for habitacion in habitacion  %}
+      <tr>
+        <td> {{ habitacion.id }} </td>
+        <td> {{ habitacion.nhabitacion }} </td>
+        <td> {{ habitacion.cantidadpas }} </td>
+        <td> {{ habitacion.orientacionhab  }} </td>
+        <td> {{ habitacion.estadohab }} </td>
+        <td>
+          <a name="" id="" class="btn btn-info" href="{% url 'editarhab' habitacion.id  %}" role="button">Editar</a>
+          <a name="" id="" class="btn btn-danger" href="{% url 'eliminarhab' habitacion.id %}" role="button">Borrar</a>
+        </td>
+      </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+
+
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+{% endblock %}

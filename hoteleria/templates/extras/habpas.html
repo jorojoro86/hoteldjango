@@ -1,0 +1,42 @@
+{% extends "paginas/base.html" %}
+
+<!DOCTYPE html>
+
+
+{% block titulo %} Habitaciones y sus pasajeros {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Habitaciones y sus pasajeros</h4>
+
+
+  <table class="table">
+    <thead>
+
+    <tr>
+        <th>Numero de habitación</th>
+        <th>Nombre pasajero</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for habitacion in habitacion  %}
+      <tr>
+        <td> {{ habitacion.nhabitacionpas }} </td>
+        <td> {{ habitacion.nombrepasajero }} </td>
+
+      </tr>
+
+     {% endfor %}
+    </tbody>
+  </table>
+
+
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+{% endblock %}

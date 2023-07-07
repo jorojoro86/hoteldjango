@@ -1,0 +1,42 @@
+{% extends "paginas/base.html" %}
+
+<!DOCTYPE html>
+
+
+{% block titulo %} Habitaciones y sus registros de hora y fecha {% endblock %}
+
+{% block contenido %}
+
+
+
+
+  <table class="table">
+    <thead>
+
+    <tr>
+        <th>Número de habitación</th>
+        <th>Fecha de registro</th>
+        <th>Día de registro</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%  for habitacion in habitacion  %}
+      {%  for habitacionreg in habitacionreg                              %}
+      <tr>
+        <td> {{ habitacion.nhabitacionpas }} </td>
+        <td>  </td>
+
+      </tr>
+
+     {% endfor %}
+    </tbody>
+  </table>
+
+
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+{% endblock %}

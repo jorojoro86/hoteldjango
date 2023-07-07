@@ -1,0 +1,21 @@
+{% extends "paginas/base.html" %}
+
+{% block titulo %} Editar una habitación {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+  <div class="card-header">
+    Editar un pasajero
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">
+        Datos de pasajero
+    </h4>
+    {% include 'pasajeros/form.html' %}
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+{% endblock %}
